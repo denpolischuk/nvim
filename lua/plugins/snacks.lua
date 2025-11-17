@@ -16,12 +16,12 @@ return {
 		bigfile = { enabled = true },
 		bufdelete = { enabled = true },
 		picker = {
-			enabled = true
+			enabled = true,
 		},
 		dashboard = { enabled = true },
 		notify = { enabled = true },
 		notifier = { enabled = true },
-    lazygit = {enabled = true },
+		lazygit = { enabled = true },
 	},
 
 	keys = {
@@ -258,6 +258,12 @@ return {
 			desc = "Delete Buffer",
 		},
 
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
 	},
 }
