@@ -42,6 +42,13 @@ return {
 			desc = "Buffers",
 		},
 		{
+			"B",
+			function()
+				Snacks.picker.buffers({focus = "list"})
+			end,
+			desc = "Buffers",
+		},
+		{
 			"<leader>fc",
 			function()
 				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })

@@ -10,6 +10,10 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", }, "[t", ":tabprevious<CR>")
 vim.keymap.set({ "n", }, "]t", ":tabnext<CR>")
 
+-- buffers
+vim.keymap.set({ "n", }, "H", ":bprevious<CR>")
+vim.keymap.set({ "n", }, "L", ":bnext<CR>")
+
 -- windows
 vim.keymap.set({ "n", }, "|", ":vsplit<CR>")
 vim.keymap.set({ "n", }, "_", ":split<CR>")
