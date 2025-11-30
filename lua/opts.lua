@@ -21,7 +21,7 @@ vim.o.statusline = table.concat({
   "%f",             -- filename
   " %m",            -- modified flag
   " %r",            -- readonly flag
-  " %{v:lua.StatuslineGit()}", -- ← git info from gitsigns
+  " %{v:lua.StatuslineGit()}", -- ← git info 
   " %=%l:%c",       -- right align: line:col
 })
 --
