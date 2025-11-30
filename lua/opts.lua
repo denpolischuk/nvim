@@ -1,10 +1,10 @@
 --
 -- BEGIN: INDENTATION
 --
-vim.opt.tabstop = 2 -- number of visual spaces per TAB
-vim.opt.shiftwidth = 2 -- spaces used for autoindent
+vim.opt.tabstop = 2      -- number of visual spaces per TAB
+vim.opt.shiftwidth = 2   -- spaces used for autoindent
 vim.opt.expandtab = true -- convert TABs to spaces
-vim.opt.softtabstop = 2 -- how many spaces TAB key inserts
+vim.opt.softtabstop = 2  -- how many spaces TAB key inserts
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 --
@@ -16,15 +16,17 @@ vim.opt.smartindent = true
 --
 vim.cmd.colorscheme("habamax")
 vim.opt.relativenumber = true
-vim.opt.number = true -- keeps the absolute number on the current line
+vim.opt.number = true          -- keeps the absolute number on the current line
 vim.o.statusline = table.concat({
-  "%f",             -- filename
-  " %m",            -- modified flag
-  " %r",            -- readonly flag
-  " %{v:lua.StatuslineGit()}", -- ← git info 
-  " %=%l:%c",       -- right align: line:col
+  "%f",                        -- filename
+  " %m",                       -- modified flag
+  " %r",                       -- readonly flag
+  " %y",                       -- readonly flag
+  " %{v:lua.StatuslineGit()}", -- ← git info
+  " %=",                       -- RIGHT SIDE
+  "%{v:lua.LspStatus()} ",
+  " %l:%c",                    -- right align: line:col
 })
 --
 -- END: LOOK
 --
-

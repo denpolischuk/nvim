@@ -13,3 +13,20 @@ function _G.StatuslineGit()
     gs.removed or 0
   )
 end
+
+function LspStatus()
+  local buf = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({ bufnr = buf })
+
+  if not clients or vim.tbl_isempty(clients) then
+    return ""
+  end
+
+  local names = {}
+  for _, c in pairs(clients) do
+    table.insert(names, c.name)
+  end
+
+  return " " .. table.concat(names, ",")
+end
+
