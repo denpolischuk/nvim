@@ -11,6 +11,20 @@ vim.opt.smartindent = true
 -- END: INDENTATION --
 --
 
+--
+-- BEGIN: LOOK
+--
 vim.cmd.colorscheme("habamax")
 vim.opt.relativenumber = true
 vim.opt.number = true -- keeps the absolute number on the current line
+vim.o.statusline = table.concat({
+  "%f",             -- filename
+  " %m",            -- modified flag
+  " %r",            -- readonly flag
+  " %{v:lua.StatuslineGit()}", -- ← git info from gitsigns
+  " %=%l:%c",       -- right align: line:col
+})
+--
+-- END: LOOK
+--
+
