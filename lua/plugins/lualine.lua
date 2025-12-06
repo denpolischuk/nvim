@@ -4,7 +4,7 @@ return {
   config = function()
     require("lualine").setup {
       options = {
-        theme = 'base16',
+        theme = 'codedark',
         icons_enabled = true,
         globalstatus = true,
       },
