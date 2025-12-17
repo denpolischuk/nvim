@@ -15,6 +15,7 @@ return {
     ensure_installed = {
       "bash",
       "go",
+      "helm",
       "hcl",
       "diff",
       "json",

@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR><Esc>", { silent = true })
-
+vim.keymap.set("n", "<Leader>h", "<CMD>LspStop<CR><BAR><CMD>set ft=helm<CR>", { silent = true, desc = "Switch file type to helm" })
 
 -- tabs
 vim.keymap.set({ "n", }, "[t", ":tabprevious<CR>")
