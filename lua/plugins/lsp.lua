@@ -27,6 +27,23 @@ return {
       end
     })
 
+    local on_attach = function(client, bufnr)
+      -- Enable format on save only if supported
+      if client.supports_method("textDocument/formatting") then
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
+
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end,
+        })
+      end
+    end
+
     vim.lsp.config['lua_ls'] = {
       settings = {
         Lua = {
@@ -42,6 +59,23 @@ return {
           },
         },
       },
+    }
+
+    vim.lsp.config['gopls'] = {
+      on_attach = on_attach,
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+        },
+      },
+    }
+
+    vim.lsp.config['terraformls'] = {
+      on_attach = on_attach,
     }
   end
 }

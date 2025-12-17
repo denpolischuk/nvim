@@ -14,6 +14,8 @@ return {
     folds = { enable = true }, ---@type lazyvim.TSFeat
     ensure_installed = {
       "bash",
+      "go",
+      "hcl",
       "diff",
       "json",
       "lua",
@@ -26,6 +28,7 @@ return {
       "regex",
       "vim",
       "vimdoc",
+      "terraform",
       "xml",
       "yaml",
     },
