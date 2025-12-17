@@ -7,6 +7,8 @@ return {
         theme = 'codedark',
         icons_enabled = true,
         globalstatus = true,
+        component_separators = { left = '|', right = '|' },
+        section_separators = { left = ' ', right = ' ' },
       },
 
       sections = {
@@ -14,14 +16,43 @@ return {
         lualine_a = { 'mode' },           -- mode (normal/insert/visual/etc)
         lualine_b = { 'branch', 'diff' }, -- Git branch + added/modified/removed
         lualine_c = {
-          { 'filename',   path = 1 },     -- relative path
           { 'diagnostics' },              -- LSP diagnostics
+          {
+            'buffers',
+            show_filename_only = true,       -- Shows shortened relative path when set to false.
+            hide_filename_extension = false, -- Hide filename extension when set to true.
+            show_modified_status = true,     -- Shows indicator when the buffer is modified.
+
+            mode = 2,                        -- 0: Shows buffer name
+            -- 1: Shows buffer index
+            -- 2: Shows buffer name + buffer index
+            -- 3: Shows buffer number
+            -- 4: Shows buffer name + buffer number
+
+            use_mode_colors = true,
+
+            max_length = vim.o.columns * 2 / 3, -- Maximum width of buffers component,
+
+            filetype_names = {
+              fzf = 'FZF',
+              yazi = 'Yazi',
+            },
+
+            buffers_color = {
+              -- Same values as the general color option can be used here.
+              active = 'lualine_a_normal', -- Color for active buffer.
+              inactive = 'lualine_a_inactive', -- Color for inactive buffer.
+            },
+          }
         },
 
         -- Right
         lualine_x = {
-          { 'fileformat' }, -- unix/dos/mac
-          { 'filetype' },   -- lua, js, etc
+          {
+            'filename',
+            path = 1,
+          },
+          { 'filetype' }, -- lua, js, etc
           {
             function()
               local msg = 'No Active Lsp'
