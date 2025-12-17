@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 
 -- Optional: prevent Space from doing anything in normal mode
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR><Esc>", { silent = true })
 
 
 -- tabs
