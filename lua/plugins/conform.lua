@@ -9,7 +9,7 @@ return {
 				jsonc = { "jq" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				yaml = { "yq" },
+				yaml = { "prettier" },
 				sh = { "shfmt" },
 				bash = { "shfmt" },
 			},
