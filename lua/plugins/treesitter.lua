@@ -28,6 +28,7 @@ return {
       "vimdoc",
       "xml",
       "yaml",
+      "zig",
     },
     textobjects = {
       select = {
