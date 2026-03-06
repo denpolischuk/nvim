@@ -4,8 +4,8 @@ return {
 		opts = {
 			formatters_by_ft = {
 				go = { "gofmt" },
-				python = { "pyink" },
-				json = { "jq" },
+				python = { "ruff" },
+				json = { "prettier" },
 				jsonc = { "jq" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
@@ -14,7 +14,7 @@ return {
 				bash = { "shfmt" },
 			},
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 1500,
 				lsp_format = "fallback",
 			},
 		},
